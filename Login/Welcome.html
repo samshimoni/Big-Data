@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+<script type="text/javascript" src="/home/sams/WebstormProjects/nodenode/uploadFile.js"></script>
+    <meta charset="utf-8">
+    <title>Welcome to Supermarket</title>
+    <link rel="stylesheet" type="text/css" href="styleWelcome.css">
+  </head>
+  <body>
+    <div class="uploadBox">
+      <h1>Upload a file:</h1>
+      <form name="upload" onsubmit="upload(path, name)">
+        <p>path to file: (on machine)</p>
+        <input type="text" name="path" placeholder="Enter path">
+        <p>new file's name</p>
+        <input type="text" name="name" placeholder="Enter new file's name">
+        <input type="submit" value="upload-to-HDFS" onclick="upload(path, name)">
+      </form>
+    </div>
+
+  </body>
+</html>

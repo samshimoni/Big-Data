@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Big Data Services</title>
+    <link rel="stylesheet" type = "text/css" href="style.css">
+  </head>
+  <body oncontextmenu="false">
+    <div class="loginbox">
+      <img src="avatar.png" class="avatar">
+      <h1>Login Here</h1>
+      <form name="login" onsubmit="return checkPassword()">
+        <p>Username</p>
+        <input type="text" name="usrnme" placeholder="Enter UserName">
+        <p>Password</p>
+        <input type="password" name = "pswrd" placeholder="Enter password">
+        <input type="submit" value="Login" onclick="checkPassword()"><br>
+        <a href="#">Lost your password ?</a><br>
+        <a href="#">Dont have account ?</a><br>
+      </form>
+      <script type="text/javascript">
+        function checkPassword(){
+          var username = document.login.usrnme.value;
+          var password = document.login.pswrd.value;
+          if(username === "samuel" || username === "kineret"|| username==="michali-ha-pisherit" && password === "123456")
+          {
+            alert("Correct");
+            window.open("Welcome.html");
+          }
+          else
+          {
+            alert("Not correct");
+          }
+        }
+
+      </script>
+    </div>
+  </body>
+</html>
