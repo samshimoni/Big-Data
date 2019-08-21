@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Login Big Data Services</title>
-    <link rel="stylesheet" type = "text/css" href="../public/style.css">
+    <link rel="stylesheet" type = "text/css" href="style.css">
+
   </head>
   <body oncontextmenu="false">
     <div class="loginbox">
       <img src="avatar.png" class="avatar">
       <h1>Login Here</h1>
-      <form name="login" method="post" action="/" onsubmit="return checkPassword()">
+      <form name="login" method="GET" action="/Welcome" onsubmit="return checkPassword()">
         <p>Username</p>
-        <input type="text" name="usrnme" placeholder="Enter UserName">
+        <input type="text" name="usrnme" placeholder="Enter Username">
         <p>Password</p>
         <input type="password" name = "pswrd" placeholder="Enter password">
         <input type="submit" value="Login" onclick="checkPassword()"><br>
