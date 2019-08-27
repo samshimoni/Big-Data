@@ -6,14 +6,70 @@ body{
   /* background-position: center; */
   font-family: sans-serif;
 }
+.sparkBox{
+  width: 320px;
+  height: 420px;
+  background: transparent;
+  color: #000;
+  top: 80%;
+  left: 20%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 50px 50px;
+}
 
+.sparkBox input[type = "submit"]
+{
+  border: none;
+  background: #fb2525;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.sparkBox input[type="submit"]:hover{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+
+
+.chartBox{
+  width: 320px;
+  height: 420px;
+  background: transparent;
+  color: #000;
+  top: 40%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 50px 50px;
+}
+.chartBox input[type = "submit"]
+{
+  border: none;
+  background: #fb2525;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.chartBox input[type="submit"]:hover{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
 .uploadBox{
   width: 320px;
   height: 420px;
   background: transparent;
   color: #000;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 20%;
   position: absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
@@ -24,6 +80,7 @@ body{
   padding: 0;
   font-weight: bold;
 }
+
 .uploadBox input{
   width: 100%;
   margin-bottom: 20px;
