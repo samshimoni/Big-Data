@@ -1,6 +1,6 @@
     const express = require('express')
     const bodyParser = require('body-parser')
-
+    const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     const app = express()
     const port = 3001
 
@@ -19,6 +19,10 @@
         console.log(__dirname)
         res.sendFile(__dirname + '/public/Welcome.html');
     });
+    app.get('/chart', function(req, res) {
+        console.log(__dirname)
+        res.sendFile(__dirname + '/public/chart.html');
+    });
 
     //post request to transfer the user to the menu page(in future)
     app.post('/', function(req, res) {
@@ -33,6 +37,24 @@
         writeToHadoop(JSON.stringify(req.body));
         res.sendFile(__dirname + '/Welcome.html');
     })
+
+    //when press 'spark' on Wellcome page
+    app.get('/spark', function(req, res) {
+        console.log(__dirname)
+        res.sendFile(__dirname + '/public/spark.html');
+    });
+
+    app.get('/analyze', function(req, res) {
+        //send to spark the name of the file
+        var xhrGET = new XMLHttpRequest();
+
+        xhrGET.open('GET', `http://localhost:4012`, true);
+        xhrGET.send(null);
+
+        console.log(__dirname )
+        res.sendFile(__dirname + '/public/Welcome.html');
+    });
+
 
     app.listen(port, () => console.log(`Example app listening on port ${port}!`))
     //Imports all css files and design (backgrounds)
