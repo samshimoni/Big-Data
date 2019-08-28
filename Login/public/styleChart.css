@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(light_bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:  cover;
+    background-color: #cccccc;
+    font-family: sans-serif;
+}
+
+input {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size : 16px;
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+button{
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size : 16px;
+
+}
+
+h1 {
+    text-align: center;
+    margin-top: 70px;
+}
+.main-div {
+    width: 200px;
+    margin: 0px auto;
+    margin-top: 80px;
+    margin-left: 450px;
+    padding: 20px;
+    display: inline-block;
+    box-align: center;
+}
+
+label {
+    display: block;
+    font-size : 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.select-div{
+    size: 2;
+    width: 200px;
+    font-family: serif;
+    font-weight: normal;
+    font-size : 16px;
+
+}

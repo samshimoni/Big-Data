@@ -1,76 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <title>My Chart.js Chart</title>
+
+	<link rel="stylesheet" type = "text/css" href="styleChart.css">
+	<title>Select Time Range</title>
 </head>
 <body>
-  <div class="container">
-    <canvas id="myChart"></canvas>
-  </div>
+		<!-- <p id="key"> hello </p> -->
+    <h1>Choose Product & Time Range</h1>
 
-  <script>
-    let myChart = document.getElementById('myChart').getContext('2d');
+						<form  name="frm" action="/sendData"  method="post" onclick="return funcTest()">
 
-    // Global Options
-    Chart.defaults.global.defaultFontFamily = 'Lato';
-    Chart.defaults.global.defaultFontSize = 18;
-    Chart.defaults.global.defaultFontColor = '#777';
+							<div id="select_div" class="main-div">
+					            <label>Product</label>
+					            <select name="item_name" id="select_div" class="select-div">
+					                <option value="Avocado">Avocado</option>
+					                <option value="Basmati rice">Basmati rice</option>
+					                <option value="Peach">Peach</option>
+					                <option value="Banana">Banana</option>
+					                <option value="Jumex Pineapple juice">Jumex Pineapple juice</option>
+					                <option value="Minced chicken">Minced chicken</option>
+					                <option value="Vinegar">Vinegar</option>
+					                <option value="eggplant">eggplant</option>
+					                <option value="Tic Tac 98gr">Tic Tac 98gr</option>
+					                <option value="Melon">Melon</option>
+					                <option value="Cherry fruit delicacy">Cherry fruit delicacy</option>
+					                <option value="Apricot">Apricot</option>
+					                <option value="Hotdog">Hotdog</option>
+					                <option value="Lentils in the package">Lentils in the package</option>
+					                <option value="Green grapes">Green grapes</option>
+					                <option value="Mushrooms in a couple">Mushrooms in a couple</option>
+					                <option value="Fresh garlic">Fresh garlic</option>
+					                <option value="Dry garlic">Dry garlic</option>
+					                <option value="loquat">loquat</option>
+					                <option value="Aluminum pans">Aluminum pans</option>
+					                <option value="Quince">Quince</option>
+					                <option value="M.LSR eggs L">M.LSR eggs L</option>
+					                <option value="Tatch towels">Tatch towels</option>
+					                <option value="Half a liter of water">Half a liter of water</option>
+					                <option value="Cucumber">Cucumber</option>
+					                <option value="Vanilla sugar">Vanilla sugar</option>
+					                <option value="Sugat 1 kg sugar">Sugat 1 kg sugar</option>
+					                <option value="Tomatoes">Tomatoes</option>
+					                <option value="Salmon fish">Salmon fish</option>
+					                <option value="Red pepper">Red pepper</option>
+					                <option value="Colorby">Colorby</option>
+					                <option value="Rye flour without yeast">Rye flour without yeast</option>
+					                <option value="Swelled flour without sifting">Swelled flour without sifting</option>
+					                <option value="Pantan moisturizer">Pantan moisturizer</option>
+					                <option value="Homemade pesto spread">Homemade pesto spread</option>
+					                <option value="Sesame">Sesame</option>
+					                <option value="M&Ms">"M&Ms</option>
+					                <option value="1/10 baking powder">1/10 baking powder</option>
+					                <option value="Fresh frozen basil">Fresh frozen basil</option>
+					                <option value="Dry onion">Dry onion</option>
+					                <option value="Green beans">Green beans</option>
+					                <option value="Bag">Bag</option>
+					                <option value="Cherry tomatoes">Cherry tomatoes</option>
+					                <option value="Meat No. 4">Meat No. 4</option>
+					                <option value="Raw tahini 1Kg">Raw tahini 1Kg</option>
+					                <option value="Yolo Chocolate">Yolo Chocolate</option>
+					                <option value="Fresh chicken thighs">Fresh chicken thighs</option>
+					                <option value="Israeli collection">Israeli collection</option>
+					                <option value="Waffle case">Waffle case</option>
+					                <option value="Lily toilet paper">Lily toilet paper</option>
+					                <option value="Lemon soda">Lemon soda</option>
+					                <option value="Pin pu candy">Pin pu candy</option>
+					                <option value="beet">beet</option>
+					                <option value="Green grapes">Green grapes</option>
+					                <option value="Amnon fish">Amnon fish</option>
+					                <option value="Coca Cola Bottle">Coca Cola Bottle</option>
+					                <option value="Kinder Egg Surprise Case">Kinder Egg Surprise Case</option>
+					                <option value="Squash">Squash</option>
+					                <option value="quarter of a lamb Mahfood">quarter of a lamb Mahfood</option>
+					                <option value="Delicated beans">Delicated beans</option>
+					                <option value="Elite potato chips">Elite potato chips</option>
+					                <option value="Cutting Board">Cutting Board</option>
+					                <option value="Set of 5 plastic bowls">Set of 5 plastic bowls</option>
+					                <option value="Lemon">Lemon</option>
+					                <option value="Clean Jerusalem Chicken">Clean Jerusalem Chicken</option>
+					                <option value="Parsley Mehadrin">Parsley Mehadrin</option>
+					                <option value="Pargit Chicken fresh">Pargit Chicken fresh</option>
+					                <option value="Entrecote">Entrecote</option>
+					                <option value="Cutted pineapple">Cutted pineapple</option>
+					                <option value="Halak meat number 5">Halak meat number 5</option>
+					                <option value="Tiny carrots">Tiny carrots</option>
+					                <option value="Cauliflower">Cauliflower</option>
+					                <option value="Chocolate wafers">Chocolate wafers</option>
+					                <option value="Medium-sized eggs">Medium-sized eggs</option>
+					                <option value="Eggplant in mayonnaise">Eggplant in mayonnaise</option>
+					                <option value="Yolo chocolate with whipped cream">Yolo chocolate with whipped cream</option>
+					                <option value="Salty crackers">Salty crackers</option>
+					                <option value="Hummus">Hummus</option>
+					                <option value="Light drink oranges">Light drink oranges</option>
+					                <option value="Rubber candy">Rubber candy</option>
+					                <option value="Cracker / conjunctiva">Cracker / conjunctiva</option>
+					              </select>
 
-    let massPopChart = new Chart(myChart, {
-      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-      data:{
-        labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
-        datasets:[{
-          label:'Population',
-          data:[
-            617594,181045,153060,106519,105162,95072],
-          //backgroundColor:'green',
-          backgroundColor:[
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
-            'rgba(255, 206, 86, 0.6)',
-            'rgba(75, 192, 192, 0.6)',
-            'rgba(153, 102, 255, 0.6)',
-            'rgba(255, 159, 64, 0.6)',
-            'rgba(255, 99, 132, 0.6)'
-          ],
-          borderWidth:1,
-          borderColor:'#777',
-          hoverBorderWidth:3,
-          hoverBorderColor:'#000'
-        }]
-      },
-      options:{
-        title:{
-          display:true,
-          text:'Largest Cities In Massachusetts',
-          fontSize:25
-        },
-        legend:{
-          display:true,
-          position:'right',
-          labels:{
-            fontColor:'#000'
-          }
-        },
-        layout:{
-          padding:{
-            left:50,
-            right:0,
-            bottom:0,
-            top:0
-          }
-        },
-        tooltips:{
-          enabled:true
-        }
-      }
-    });
-  </script>
+												<label>Start Date</label>
+		                    <input type="date"  id ="startDate"name="firstDate">
+												<label>End Date</label>
+												<input type="date" id="endDate" name="endDate"> </input>
+
+							<input type="submit" name="" value="sendToPython">
+						</form>
+
+						<!-- <div class="uploadBox">
+				      <h1>Upload a file:</h1>
+				      <form action="/sendData"  method="post">
+				        <p>path to file: (on machine)</p>
+				        <input type="text" name="myPath" id="myPath" placeholder="Enter path">
+				        <input type="submit" value="upload-to-HDFS">
+				      </form>
+				    </div> -->
+    </div>
+		<!-- <p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed!";
+}
+</script> -->
+
+<script type="text/javascript">
+		function funcTest(){
+			var str = ""
+			var first = document.frm.firstDate.value;
+			var second = document.frm.endDate.value;
+			var name  = document.frm.item_name.value;
+			if(first != null && second!=null){
+				str +=first + ","+second + "," + name;
+				document.getElementById("key")
+			}
+
+		}
+
+</script>
+
+
+
 </body>
 </html>
