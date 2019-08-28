@@ -6,7 +6,6 @@
 	<title>Select Time Range</title>
 </head>
 <body>
-		<!-- <p id="key"> hello </p> -->
     <h1>Choose Product & Time Range</h1>
 
 						<form  name="frm" action="/sendData"  method="post" onclick="return funcTest()">
@@ -104,23 +103,8 @@
 
 							<input type="submit" name="" value="sendToPython">
 						</form>
-
-						<!-- <div class="uploadBox">
-				      <h1>Upload a file:</h1>
-				      <form action="/sendData"  method="post">
-				        <p>path to file: (on machine)</p>
-				        <input type="text" name="myPath" id="myPath" placeholder="Enter path">
-				        <input type="submit" value="upload-to-HDFS">
-				      </form>
-				    </div> -->
     </div>
-		<!-- <p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
 
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Paragraph changed!";
-}
-</script> -->
 
 <script type="text/javascript">
 		function funcTest(){
@@ -131,12 +115,8 @@ function myFunction() {
 			if(first != null && second!=null){
 				str +=first + ","+second + "," + name;
 				document.getElementById("key")
-			}
-
-		}
-
+			}}
 </script>
-
 
 
 </body>
