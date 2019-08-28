@@ -51,17 +51,20 @@ def findBetweenDatesYenot(name ,firstDate, secondDate):
 #for i in lst:
     #print(i)
 
-#lst = findBetweenDatesRami('Tomatoes', '00-00-00T00:00:00.000Z', '2500-06-06T00:00:00.000Z')
-#lst2 = findBetweenDatesYenot('Tomatoes', '00-00-00T00:00:00.000Z', '2500-06-06T00:00:00.000Z')
+data = str(sys.argv[1])
 
-#lst3 = []
-#lst3.append(len(lst))
-#lst3.append(len(lst2))
+arr = data.split(',')
+lst = findBetweenDatesRami(arr[0], '00-00-00T00:00:00.000Z', '2019-06-06T00:00:00.000Z')
+lst2 = findBetweenDatesYenot(arr[0], '00-00-00T00:00:00.000Z', '2019-06-06T00:00:00.000Z')
 
-# print(lst3)
-# import plotly.graph_objects as go
-# fig = go.Figure(
-#     data=[go.Bar(y=lst3)],
-#     layout_title_text="Rami levi left \t\t\t Yenot Bitan  "
-# )
-# fig.show()
+lst3 = []
+lst3.append(len(lst))
+lst3.append(len(lst2))
+
+print(lst3)
+import plotly.graph_objects as go
+fig = go.Figure(
+     data=[go.Bar(y=lst3)],
+     layout_title_text="Rami levi left \t\t\t Yenot Bitan  "
+)
+fig.show()
