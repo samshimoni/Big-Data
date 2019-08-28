@@ -1,7 +1,7 @@
 # Big-Data
 Analyze Super-market Receipts  
 
-uploading cvs reciepts to HDFS,
+uploading csv reciepts to HDFS,
 proccessing the data with SPARK(pySpark) and uplading it to mongoDB,
 choosing two dates and item_name to see the amount of pourches in particular dates. 
 showing the result with plotly(Python)
