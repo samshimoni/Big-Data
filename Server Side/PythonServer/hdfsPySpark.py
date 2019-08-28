@@ -9,7 +9,6 @@ from pyspark.sql import Window
 import pymongo
 from pymongo import MongoClient
 
-
 def collectDataFromHDFS():
     conf = SparkConf().setAppName("myFirstApp").setMaster("local")
     sc = SparkContext(conf=conf)
@@ -23,15 +22,12 @@ def collectDataFromHDFS():
         #print(x['path'])
         csvDataframe = sqlContext.read.format("csv").option("header", "true").option("inferschema", "true").option("mode", "DROPMALFORMED").load("hdfs://localhost:9000"+x['path'])
         ls.append(csvDataframe)
-    print(ls)
-    df = ls[1][['item_name', 'date', 'price_for_UNIT/KG']].union(ls[0][['item_name', 'date', 'price_for_UNIT/KG']])
-    df.show()
-
     return ls
 
+list = collectDataFromHDFS()
+df = list[1][['item_name', 'date', 'price_for_UNIT/KG']].union(list[0][['item_name', 'date', 'price_for_UNIT/KG']])
 
+df.show()
 
-    #sorted_list_df = df.groupBy("item_name").agg(F.collect_list(F.col("date")).alias("date_list"),
-    #F.collect_list(F.col("price_for_UNIT/KG")).alias("prics_list"))
-    #sorted_list_df.show()
-
+sorted_list_df = df.groupBy("item_name").agg(F.collect_list(F.col("date")).alias("date_list"), F.collect_list(F.col("price_for_UNIT/KG")).alias("prics_list"))
+sorted_list_df.show()
