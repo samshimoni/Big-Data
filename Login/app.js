@@ -1,6 +1,8 @@
     const express = require('express')
     const bodyParser = require('body-parser')
     const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    const { spawn } = require('child_process');
+
     const app = express()
     const port = 3001
 
@@ -12,6 +14,37 @@
     app.get('/', function(req, res) {
         console.log(__dirname)
         res.sendFile(__dirname + '/public/index.html');
+    });
+
+    app.post('/sendData', function(req, res){
+
+
+        var x = (JSON.stringify(req.body));
+        array = x.split(',');
+
+        console.log(array[0].substring(14,array[0].length-1));
+        console.log(array[1].substring(13,array[1].length-1));
+        console.log(array[2].substring(13,array[2].length-2));
+
+
+        var emptyStr = "";
+        emptyStr += array[0].substring(14,array[0].length-1)+','+array[1].substring(13,array[1].length-1)+','+array[2].substring(13,array[2].length-2);
+
+        console.log((emptyStr));
+
+        //console.log(array.length)
+        const scriptPath = '/home/sams/Desktop/FULLSTACK/MongoDB/Python/interactingWithAtlas.py';
+        var data = emptyStr;
+        const process = spawn('python3',[scriptPath, data ])
+        process.stdout.on('data', (myData) =>{
+            var myStr = myData.toString();
+            console.log(myStr);
+        })
+        process.stderr.on('data', (myErr) => {
+            var myStr = myErr.toString();
+            console.log(myStr)
+        })
+        res.sendFile(__dirname + '/public/Welcome.html');
     });
 
     //we we want to get to loclhost:3001/Welcome
@@ -37,6 +70,7 @@
         writeToHadoop(JSON.stringify(req.body));
         res.sendFile(__dirname + '/Welcome.html');
     })
+    
 
     //when press 'spark' on Wellcome page
     app.get('/spark', function(req, res) {
